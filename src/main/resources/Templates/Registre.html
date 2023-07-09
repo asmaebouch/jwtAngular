@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Registration</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #F9F9F8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 400px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 10px;
+      width: 150px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      color: #032965;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 150px;
+      float: right;
+    }
+
+    select {
+      height: 45px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container mx-auto">
+  <form th:action="@{/registerNewUser}"  method="post">
+    <label for="userFirstName">First Name:</label>
+    <input type="text" id="userFirstName" name="userFirstName" required>
+
+    <label for="userLastName">Last Name:</label>
+    <input type="text" id="userLastName" name="userLastName" required>
+
+    <label for="userName">userName:</label>
+    <input type="text" id="userName" name="userName" required>
+
+    <label for="userPassword">Password:</label>
+    <input type="password" id="userPassword" name="userPassword" required>
+
+    <label for="role">Role:</label>
+    <select id="role" name="role" multiple required>
+      <option value="Admin">Admin</option>
+      <option value="User">User</option>
+    </select>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
+</body>
+
+</html>
